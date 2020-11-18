@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using VWage.Console;
 
 namespace VWage.Test
 {
@@ -16,7 +17,7 @@ namespace VWage.Test
             decimal taxableIncome = 17000;
             decimal tax = 0;
             //Act
-            tax = Income.CalculateTax(taxableIncome);
+            tax = SalaryDetails.CalculateIncomeTax(taxableIncome);
             //Assert
             Assert.AreEqual(0,tax,"Tax should be zero");
         }
@@ -28,7 +29,7 @@ namespace VWage.Test
             decimal taxableIncome = 17000;
             decimal tax = 0;
             //Act
-            tax = Income.CalculateMedicareLevy(taxableIncome);
+            tax = SalaryDetails.CalculateMedicareLevy(taxableIncome);
             //Assert
             Assert.AreEqual(0, tax, "Levy should be zero");
         }
@@ -40,7 +41,7 @@ namespace VWage.Test
             decimal taxableIncome = 100000;
             decimal tax = 0;
             //Act
-            tax = Income.CalculateBudgetReparLevy(taxableIncome);
+            tax = SalaryDetails.CalculateBudgetReparLevy(taxableIncome);
             //Assert
             Assert.AreEqual(0, tax, "Tax should be zero");
         }
