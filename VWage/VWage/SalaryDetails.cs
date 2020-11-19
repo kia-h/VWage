@@ -12,6 +12,11 @@ namespace VWage.Console
         BudgetRepairLevy budgetRepairLevy = new BudgetRepairLevy("b",2);
         IncomeTax incomeTax = new IncomeTax("i",5);
 
+        public double CalculateSuper(double grossIncome)
+        {
+            return Math.Ceiling(grossIncome * 9.5 / 100);
+        }
+
         public double CalculateMedicareLevy(in double taxableIncome)
         {
             //medicareLevy.AddTaxBrackets();

@@ -21,5 +21,6 @@ namespace VWage.Console
         {
             TaxBrackets.Add(taxBracket);
         }
+       
     }
 }
