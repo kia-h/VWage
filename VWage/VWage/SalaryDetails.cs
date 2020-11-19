@@ -6,21 +6,26 @@ using System.Threading.Tasks;
 
 namespace VWage.Console
 {
-    public static class SalaryDetails
+    public  class SalaryDetails
     {
-        public static decimal CalculateMedicareLevy(in decimal taxableIncome)
+        MedicareLevy medicareLevy=new MedicareLevy("m",3);
+        BudgetRepairLevy budgetRepairLevy = new BudgetRepairLevy("b",2);
+        IncomeTax incomeTax = new IncomeTax("i",5);
+
+        public double CalculateMedicareLevy(in double taxableIncome)
         {
-            throw new NotImplementedException();
+            //medicareLevy.AddTaxBrackets();
+            return medicareLevy.CalculateDeduction(taxableIncome);
         }
 
-        public static decimal CalculateIncomeTax(in decimal taxableIncome)
+        public double CalculateIncomeTax(in double taxableIncome)
         {
-            throw new NotImplementedException();
+            return incomeTax.CalculateDeduction(taxableIncome);
         }
 
-        public static decimal CalculateBudgetReparLevy(in decimal taxableIncome)
+        public double CalculateBudgetRepairLevy(in double taxableIncome)
         {
-            throw new NotImplementedException();
+            return budgetRepairLevy.CalculateDeduction(taxableIncome);
         }
     }
 }

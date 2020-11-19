@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\VWage\VWage.Console.csproj" />
+    <ProjectReference Include="..\VWage\VSalary.Console.csproj" />
   </ItemGroup>
 
 </Project>

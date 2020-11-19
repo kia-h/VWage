@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30621.155
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VWage.Console", "VWage\VWage.Console.csproj", "{CE9664DD-546B-46EE-A4DD-8E5894ADECA0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VSalary.Console", "VWage\VSalary.Console.csproj", "{CE9664DD-546B-46EE-A4DD-8E5894ADECA0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VWage.Test", "VWage.Test\VWage.Test.csproj", "{DED69525-2E00-44AC-8C7E-ABE94F0A0C55}"
 EndProject
