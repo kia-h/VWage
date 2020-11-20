@@ -1,7 +1,7 @@
 using NUnit.Framework;
-using VWage.Console;
+using VSalary.Console;
 
-namespace VWage.Test
+namespace VSalary.Test
 {
     public class SalaryTests
     {
@@ -17,7 +17,11 @@ namespace VWage.Test
             //Arrange
             double taxableIncome = 17000;
             double tax = 0;
-            SalaryDetails sd = new SalaryDetails();
+            MedicareLevy medicareLevy = new MedicareLevy("Medicare Levy", 2);
+            BudgetRepairLevy budgetRepairLevy = new BudgetRepairLevy("Budget Repair Levy", 2);
+            IncomeTax incomeTax = new IncomeTax("Income Tax", 5);
+            Income income = new Income();
+            SalaryDetails sd = new SalaryDetails(medicareLevy, budgetRepairLevy, incomeTax, income);
             //Act
             tax = sd.CalculateIncomeTax(taxableIncome);
             //Assert
@@ -30,7 +34,11 @@ namespace VWage.Test
             //Arrange
             double taxableIncome = 17000;
             double tax = 0;
-            SalaryDetails sd = new SalaryDetails();
+            MedicareLevy medicareLevy = new MedicareLevy("Medicare Levy", 2);
+            BudgetRepairLevy budgetRepairLevy = new BudgetRepairLevy("Budget Repair Levy", 2);
+            IncomeTax incomeTax = new IncomeTax("Income Tax", 5);
+            Income income = new Income();
+            SalaryDetails sd = new SalaryDetails(medicareLevy, budgetRepairLevy, incomeTax, income);
             //Act
             tax = sd.CalculateMedicareLevy(taxableIncome);
             //Assert
@@ -43,7 +51,11 @@ namespace VWage.Test
             //Arrange
             double taxableIncome = 100000;
             double tax = 0;
-            SalaryDetails sd = new SalaryDetails();
+            MedicareLevy medicareLevy = new MedicareLevy("Medicare Levy", 2);
+            BudgetRepairLevy budgetRepairLevy = new BudgetRepairLevy("Budget Repair Levy", 2);
+            IncomeTax incomeTax = new IncomeTax("Income Tax", 5);
+            Income income = new Income();
+            SalaryDetails sd = new SalaryDetails(medicareLevy, budgetRepairLevy, incomeTax, income);
             //Act
             tax = sd.CalculateBudgetRepairLevy(taxableIncome);
             //Assert

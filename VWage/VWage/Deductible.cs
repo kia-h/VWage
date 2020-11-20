@@ -4,13 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VWage.Console
+namespace VSalary.Console
 {
-    public class Deductible
+    /// <summary>
+    /// This class represents the deductible. it acts as a base c
+    /// </summary>
+    public abstract class Deductible
     {
-        public string Name{ get; set; }
-        
-        public List<TaxableIncomePercentage> TaxBrackets { get; set; }
+        protected string Name{ get; set; }
+
+        private List<TaxableIncomePercentage> TaxBrackets { get; set; }
 
         public string GetName()
         {
@@ -21,6 +24,5 @@ namespace VWage.Console
         {
             TaxBrackets.Add(taxBracket);
         }
-       
     }
 }

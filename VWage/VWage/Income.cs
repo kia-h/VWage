@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace VWage.Console
+﻿namespace VSalary.Console
 {
     public class Income
     {
@@ -21,7 +15,5 @@ namespace VWage.Console
 
         //public List<Deductible> Deductions { get; set; }
         public double Deductions { get; set; }
-
     }
-
 }

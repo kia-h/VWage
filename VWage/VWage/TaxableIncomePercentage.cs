@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace VWage.Console
+﻿namespace VSalary.Console
 {
+
+    /// <summary>
+    /// this models each deductions in each deductible
+    /// </summary>
     public class TaxableIncomePercentage
     {
         public int Order { get; set; }

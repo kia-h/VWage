@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VWage.Console
+namespace VSalary.Console
 {
     public class MedicareLevy:Deductible
     {
@@ -16,10 +16,9 @@ namespace VWage.Console
             Name = "Medicare Levy";
             TaxBrackets=new Dictionary<string, TaxableIncomePercentage>();
             AddTaxBrackets();
-
         }
 
-        public void AddTaxBrackets()
+        private void AddTaxBrackets()
         {
             var first = new TaxableIncomePercentage(1,0,21335,0);
             var second = new TaxableIncomePercentage(2,21336,26668,10);
@@ -27,10 +26,9 @@ namespace VWage.Console
             TaxBrackets.Add("first",first);
             TaxBrackets.Add("second",second);
             TaxBrackets.Add("third",third);
-
         }
 
-        public TaxableIncomePercentage GetTaxBracket(double income)
+        private TaxableIncomePercentage GetTaxBracket(double income)
         {
             if (income <= 21355)
             {
@@ -52,20 +50,22 @@ namespace VWage.Console
             var bracket = GetTaxBracket(income);
             var currentOrder = bracket.Order;
             double deduction = 0;
-            if (currentOrder == 1)
+            switch (currentOrder)
             {
-                return 0;
-            }
-            else if (currentOrder == 2)
-            {
-                var excess = income - TaxBrackets["first"].MaxAmount;
-                deduction = Math.Ceiling(excess * bracket.Percentage/100);
-                
-            }
-            else if (currentOrder == 3)
-            {
-                var excess = income - TaxBrackets["second"].MaxAmount;
-                deduction = Math.Ceiling(income * 2 / 100);
+                case 1:
+                    return 0;
+                case 2:
+                {
+                    var excess = income - TaxBrackets["first"].MaxAmount;
+                    deduction = Math.Ceiling(excess * bracket.Percentage/100);
+                    break;
+                }
+                case 3:
+                {
+                    var excess = income - TaxBrackets["second"].MaxAmount;
+                    deduction = Math.Ceiling(income * 2 / 100);
+                    break;
+                }
             }
 
             return deduction;
