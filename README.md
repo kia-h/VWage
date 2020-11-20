@@ -41,3 +41,7 @@ Pay packet: $3,944.48 per month
 
 Press any key to end...
 ```
+
+###Run The Project
+To run the project either use Visual studio 2019 and choose the console project and Run 
+there is also a test project but it doesn't now have complete coverage
